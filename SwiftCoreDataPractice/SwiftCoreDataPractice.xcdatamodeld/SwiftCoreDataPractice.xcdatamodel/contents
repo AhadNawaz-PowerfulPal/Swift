@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cities" representedClassName="" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="city" inverseEntity="Weather" syncable="YES"/>
+    </entity>
+    <entity name="Weather" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Cities" inverseName="weather" inverseEntity="Cities" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cities" positionX="-63" positionY="-162" width="128" height="88"/>
+        <element name="Weather" positionX="189" positionY="-163" width="128" height="118"/>
+    </elements>
+</model>
