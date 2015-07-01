@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Album" representedClassName="SwiftCoreDataPractice.Album" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photos" inverseName="album" inverseEntity="Photos" syncable="YES"/>
+    </entity>
+    <entity name="Books" representedClassName="SwiftCoreDataPractice.Books" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="dest_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pogress" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="source_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Cities" representedClassName="PRODUCT_MODULE_NAME.Cities" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="city" inverseEntity="Weather" syncable="YES"/>
+    </entity>
+    <entity name="Photos" representedClassName="SwiftCoreDataPractice.Photos" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Album" inverseName="photo" inverseEntity="Album" syncable="YES"/>
+    </entity>
+    <entity name="Weather" representedClassName="PRODUCT_MODULE_NAME.Weather" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cities" inverseName="weather" inverseEntity="Cities" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-117" positionY="-0" width="128" height="103"/>
+        <element name="Books" positionX="-371" positionY="141" width="128" height="133"/>
+        <element name="Cities" positionX="-63" positionY="-162" width="128" height="88"/>
+        <element name="Photos" positionX="196" positionY="18" width="128" height="103"/>
+        <element name="Weather" positionX="189" positionY="-163" width="128" height="118"/>
+    </elements>
+</model>
